@@ -16,3 +16,9 @@ df2<-df1%>% filter(Converted==1)
 
 library(ggplot2)
 
+
+ggplot(data=df2,aes(x=Partner,y=Converted))+geom_bar(stat="Identity")
+ggplot(data=df2,aes(x=Partner,y=Converted))+geom_bar(stat="Identity",width=0.5)
+ggplot(data=df2,aes(x=substr(df2$Partner,9,10),y=Converted))+geom_bar(stat="Identity",width=0.5)
+ggplot(data=df2,aes(x=substr(df2$Partner,9,10),y=Converted,colour=Quarter))+geom_bar(stat="Identity",width=0.5)
+ggplot(data=df2,aes(x=substr(df2$Partner,9,10),y=Amount,colour=Quarter))+geom_bar(stat="Identity",width=0.5)
