@@ -1,0 +1,7 @@
+library(dplyr)
+
+setwd("~/desktop/datalls/datasource/")
+
+library("readxl")
+
+df<-read_excel("MKT.xlsx")
