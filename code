@@ -5,3 +5,14 @@ setwd("~/desktop/datalls/datasource/")
 library("readxl")
 
 df<-read_excel("MKT.xlsx")
+
+df<-df %>% rename_all(funs(str_replace(.," ","_")))
+df<-df %>% rename_all(funs(str_replace(.," ","_")))
+names(df)[3]<-"Partner"
+
+df1<-df %>% filter (Lead_Stage != "NA" & First_Campaign_Type !="NA" & Last_Modified_Date <"2020-07-01")
+
+df2<-df1%>% filter(Converted==1)
+
+library(ggplot2)
+
